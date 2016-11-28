@@ -4,11 +4,11 @@ namespace mvc_library.Models
 {
     public class Library
     {
-        private string Name { get; set; }
+        public string Name { get; set; }
 
-        private string Address { get; set; }
+        public string Address { get; set; }
 
-        private List<Book> Books { get; set; } 
+        public List<Book> Books { get; set; } 
 
         public Library(string name, string address)
         {
