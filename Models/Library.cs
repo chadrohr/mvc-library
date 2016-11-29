@@ -4,31 +4,10 @@ namespace mvc_library.Models
 {
     public class Library
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-
         public string Address { get; set; }
+        public virtual ICollection<Book> Books { get; set; } = new List<Book>();
 
-        public List<Book> Books { get; set; } 
-
-        public Library(string name, string address)
-        {
-            Name = name;
-            Address = address;
-            Books = new List<Book>();
-        }
-
-        public void AddBook(Book bookToAddToList)
-        {
-            Books.Add(bookToAddToList);
-        }
-        public void GetBook(Book bookToGetInList)
-        {
-            Books.Add(bookToGetInList);
-        }
-
-        public List<Book> GetAllBooks()
-        {
-            return Books;
-        }
     }
 }

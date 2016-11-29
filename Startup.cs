@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace mvc_library
 {
@@ -28,6 +29,11 @@ namespace mvc_library
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddDbContext<LibraryContext>(x =>
+            {
+                x.UseSqlite("Filename=./MVCLibrary.db");
+            });
+            
             services.AddMvc();
         }
 
