@@ -21,6 +21,10 @@ namespace mvc_library.Models
         {
             Books.Add(bookToAddToList);
         }
+        public void GetBook(Book bookToGetInList)
+        {
+            Books.Add(bookToGetInList);
+        }
 
         public List<Book> GetAllBooks()
         {

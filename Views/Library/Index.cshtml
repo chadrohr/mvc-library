@@ -1,4 +1,52 @@
 @model mvc_library.Models.Library
 
+@{ ViewBag.Title = Model.Name;}
+
+<h2>@Model.Name</h2>
+
+<p>
+	<a asp-controller="Library" asp-action="AddBook">Add Book</a>
+</p>
+
+<h3>@Model.Books.Count</h3>
+
+<table class="table">
+	<tr>
+		<th>Id</th>
+		<th>Url</th>
+        <th>Description</th>
+	</tr>
+	@foreach (var book in Model.Books){
+	<tr>
+		<td>@book.Title</td>
+		<td>@book.Author</td>
+        <td>@book.Description</td>
+	</tr>
+	}
+</table>
+
+
+
+
+
+
 <h1>@Model.Name</h1>
 <h3>@Model.Address</h3>
+
+<a asp-controller="Library" asp-action="AddBook">Add Books</a><br>
+<a asp-controller="Library" asp-action="GetBook">Get Book to Edit</a>
+
+<select class="form-control">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+
+<ol>
+    @foreach(var book in Model.Books)
+    {
+        <li>@book.Title - @book.Author - @book.Description</li>
+    }
+</ol>
